@@ -1,0 +1,344 @@
+// Variables
+$primary-color: #0047ba;
+$secondary-color: #f3f4f6;
+$text-color: #333;
+$border-color: #e5e7eb;
+$white: #fff;
+$container-width: 1420px;
+
+// Mixins
+@mixin container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.6;
+  color: $text-color;
+}
+
+.center-report-page {
+  margin: 0 auto;
+  .container {
+    @include container;
+  }
+
+  // Header Styles
+  .main-header {
+    .top-bar {
+      background-color: $primary-color;
+      color: $white;
+
+      .container {
+        @include flex-center;
+        justify-content: space-between;
+        align-items: center;
+        height: 35px;
+      }
+      .logo-img {
+        height: 20px;
+        cursor: pointer;
+      }
+      .right-menu {
+        display: flex;
+        align-items: center;
+        gap: 10.5px;
+        a {
+          color: $white;
+          font-size: 13px;
+          text-decoration: none;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    .main-nav {
+      border-bottom: 1px solid $border-color;
+
+      .primary-nav {
+        ul {
+          @include flex-center;
+          justify-content: center;
+          list-style: none;
+
+          li {
+            width: 128px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a {
+              color: $text-color;
+              text-decoration: none;
+              font-weight: 500;
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+          .hwf-logo-img {
+            width: 90px;
+          }
+        }
+      }
+    }
+  }
+
+  // Breadcrumb
+  .breadcrumb {
+    padding: 1rem 0;
+    @include flex-center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+
+    .home-icon {
+      width: 16px;
+      height: 16px;
+      background-image: url("home-icon.png");
+      display: inline-block;
+    }
+  }
+
+  // Page Title
+  .page-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: $primary-color;
+  }
+
+  // Tab Menu
+  .tab-menu {
+    display: flex;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $border-color;
+
+    a {
+      padding: 1rem 2rem;
+      text-decoration: none;
+      color: $text-color;
+      border: 1px solid $border-color;
+      border-bottom: none;
+      margin-right: -1px;
+      background-color: $secondary-color;
+
+      &.active {
+        background-color: $white;
+        border-bottom: 1px solid $white;
+        margin-bottom: -1px;
+        font-weight: 500;
+      }
+
+      &:hover {
+        background-color: darken($secondary-color, 5%);
+      }
+    }
+  }
+
+  // Report Options
+  .report-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: $secondary-color;
+    border-radius: 4px;
+
+    .radio-label {
+      @include flex-center;
+      gap: 0.5rem;
+      cursor: pointer;
+
+      input[type="radio"] {
+        margin: 0;
+      }
+    }
+  }
+
+  // Form Styles
+  .report-form {
+    .form-group {
+      margin-bottom: 1.5rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+
+        &.required::after {
+          content: "*";
+          color: red;
+          margin-left: 0.25rem;
+        }
+      }
+
+      .form-control {
+        width: calc(50% - 0.5rem);
+        padding: 0.75rem;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        font-size: 1rem;
+
+        &.full-width {
+          width: 100%;
+        }
+      }
+
+      textarea.form-control {
+        width: 100%;
+        resize: vertical;
+      }
+    }
+
+    .file-upload {
+      @include flex-center;
+      gap: 1rem;
+
+      .btn-file {
+        padding: 0.5rem 1rem;
+        background-color: $secondary-color;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken($secondary-color, 5%);
+        }
+      }
+
+      .file-name {
+        color: #666;
+      }
+    }
+
+    .form-actions {
+      text-align: center;
+      margin-top: 2rem;
+
+      .btn-submit {
+        padding: 1rem 3rem;
+        background-color: $primary-color;
+        color: $white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken($primary-color, 5%);
+        }
+      }
+    }
+  }
+
+  // Footer Styles
+  .main-footer {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    background-color: $secondary-color;
+
+    .footer-content {
+      @include container;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      @include flex-center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+
+      a {
+        color: $text-color;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .footer-info {
+      color: #666;
+      font-size: 0.875rem;
+      line-height: 1.8;
+    }
+
+    .footer-logo-img {
+      width: 240px;
+    }
+  }
+
+  // Tab Content Styles
+  .tab-content {
+    .content-section {
+      background-color: $white;
+      padding: 2rem;
+      border-radius: 4px;
+      border: 1px solid $border-color;
+
+      h2 {
+        color: $primary-color;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        margin: 1.5rem 0 1rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+
+      ul,
+      ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+
+        li {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      .support-info,
+      .process-info,
+      .emergency-contacts {
+        background-color: $secondary-color;
+        padding: 1.5rem;
+        border-radius: 4px;
+        margin-top: 1rem;
+      }
+
+      .emergency-contacts {
+        p {
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

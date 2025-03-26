@@ -1,0 +1,40 @@
+# Dependencies
+/node_modules
+/package-lock.json
+
+# Compiled CSS
+*.css
+*.css.map
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE and Editor folders
+/.idea
+/.vscode
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Build output
+/dist
+/build
+
+# Cache directories
+.sass-cache/
+.cache/ 

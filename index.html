@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>한국사회복지재단</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="center-report-page">
+    <header class="main-header">
+      <div class="top-bar">
+        <div class="container">
+          <img
+            src="assets/images/header_logo.png"
+            alt="HWSF 한국사회복지재단"
+            class="logo-img"
+          />
+          <div class="right-menu">
+            <a href="#">로그인</a>
+            <span>·</span>
+            <a href="#">회원가입</a>
+            <span>·</span>
+            <a href="#">복지TV</a>
+            <span>·</span>
+            <a href="#">페이스북</a>
+          </div>
+        </div>
+      </div>
+      <div class="main-nav container">
+        <nav class="primary-nav">
+          <ul>
+            <li><a href="#">재단소개</a></li>
+            <li><a href="#">재단사업</a></li>
+            <li><a href="#">재단소식</a></li>
+            <li>
+              <img
+                src="assets/images/hwf_logo.png"
+                alt="HWSF 한국사회복지재단"
+                class="hwf-logo-img"
+              />
+            </li>
+            <li><a href="#">H-아카데미</a></li>
+            <li><a href="#">재용정보</a></li>
+            <li><a href="#">복지정보</a></li>
+            <li><a href="#">복지자료</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="breadcrumb">
+        <a href="#"><i class="home-icon"></i></a>
+        <span>부패신고창구</span>
+      </div>
+
+      <h1 class="page-title">부패신고창구</h1>
+
+      <div class="tab-menu">
+        <a href="#" class="tab-link active" data-tab="corruption">부패신고</a>
+        <a href="#" class="tab-link" data-tab="unfair">부조리신고안내</a>
+        <a href="#" class="tab-link" data-tab="emotion">감정신고·지원센터</a>
+        <a href="#" class="tab-link" data-tab="internal">내부부패행위신고</a>
+        <a href="#" class="tab-link" data-tab="emergency"
+          >청렴긴급현황센터안내</a
+        >
+      </div>
+
+      <div id="tab-content-container"></div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const tabLinks = document.querySelectorAll(".tab-link");
+          const contentContainer = document.getElementById(
+            "tab-content-container"
+          );
+
+          // Function to load content
+          async function loadTabContent(tabId) {
+            try {
+              const response = await fetch(`tab-${tabId}.html`);
+              const content = await response.text();
+              contentContainer.innerHTML = content;
+            } catch (error) {
+              console.error("Error loading tab content:", error);
+              contentContainer.innerHTML =
+                "<p>Error loading content. Please try again.</p>";
+            }
+          }
+
+          // Load initial content
+          loadTabContent("corruption");
+
+          // Add click handlers to tabs
+          tabLinks.forEach((link) => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+
+              // Remove active class from all tabs
+              tabLinks.forEach((tab) => tab.classList.remove("active"));
+
+              // Add active class to clicked tab
+              this.classList.add("active");
+
+              // Load the corresponding content
+              const tabId = this.getAttribute("data-tab");
+              loadTabContent(tabId);
+            });
+          });
+        });
+      </script>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container footer-content">
+        <div class="footer-content-right">
+          <div class="footer-links">
+            <a href="#">개인정보처리방침</a>
+            <a href="#">서비스 이용약관</a>
+            <a href="#">이메일무단수집거부</a>
+          </div>
+          <div class="footer-info">
+            <p>발문자 수 : 34,223명</p>
+            <p>
+              Copyright © 2021 hwaseong Welfare Foundation. All rights reserved.
+            </p>
+            <p>
+              주소 : (18588) 경기도 화성시 향남읍 향남로 470 화성종합경기타운
+              1301호
+            </p>
+            <p>
+              TEL : 031-3535-114 | FAX : 031-353-0478 | E-MAIL : hcare@hcare.kr
+              | 고유번호 : 680-82-00364
+            </p>
+          </div>
+        </div>
+        <div class="footer-content-left">
+          <img
+            src="assets/images/footer_logo.png"
+            alt="한국사회복지재단"
+            class="footer-logo-img"
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

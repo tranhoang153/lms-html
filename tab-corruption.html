@@ -1,0 +1,74 @@
+<div class="report-options">
+  <label class="radio-label">
+    <input type="radio" name="report-type" checked />
+    <span>자진신고</span>
+  </label>
+  <label class="radio-label">
+    <input type="radio" name="report-type" />
+    <span>행정감사결과 행동강령 위반신고</span>
+  </label>
+  <label class="radio-label">
+    <input type="radio" name="report-type" />
+    <span>공익신고</span>
+  </label>
+  <label class="radio-label">
+    <input type="radio" name="report-type" />
+    <span>아빠응원신고</span>
+  </label>
+  <label class="radio-label">
+    <input type="radio" name="report-type" />
+    <span>갑질신고</span>
+  </label>
+  <label class="radio-label">
+    <input type="radio" name="report-type" />
+    <span>인권침해신고</span>
+  </label>
+</div>
+
+<form class="report-form">
+  <div class="form-group">
+    <label class="required">성명</label>
+    <input type="text" class="form-control" />
+    <label class="required">연락처</label>
+    <input type="text" class="form-control" />
+  </div>
+
+  <div class="form-group">
+    <label class="required">소속</label>
+    <input type="text" class="form-control full-width" />
+  </div>
+
+  <div class="form-group">
+    <label class="required">이메일</label>
+    <input type="email" class="form-control full-width" />
+  </div>
+
+  <div class="form-group">
+    <label class="required">피신고자 성명</label>
+    <input type="text" class="form-control" />
+    <label class="required">피신고자 연락처</label>
+    <input type="text" class="form-control" />
+  </div>
+
+  <div class="form-group">
+    <label class="required">피신고자 소속</label>
+    <input type="text" class="form-control full-width" />
+  </div>
+
+  <div class="form-group">
+    <label>신고내용</label>
+    <textarea class="form-control" rows="10"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>첨부파일</label>
+    <div class="file-upload">
+      <button type="button" class="btn-file">파일 선택</button>
+      <span class="file-name">이미지.jpg</span>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="btn-submit">신고하기</button>
+  </div>
+</form>
