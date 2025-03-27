@@ -150,24 +150,6 @@ body {
     }
   }
 
-  // Breadcrumb
-  .breadcrumb {
-    padding: 1rem 0;
-    @include flex-center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-
-    .home-icon {
-      width: 16px;
-      height: 16px;
-      background-image: url("home-icon.png");
-      display: inline-block;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  }
-
   .breadcrumb-wrapper {
     border-bottom: 1px solid $border-color;
     border-top: 1px solid $border-color;
@@ -484,7 +466,7 @@ body {
         .first-table-p {
           position: relative;
           margin-left: 20px;
-          &::before{
+          &::before {
             content: "";
             position: absolute;
             top: 5px;
