@@ -92,6 +92,7 @@ body {
               color: $text-color;
               text-decoration: none;
               font-weight: 500;
+              font-size: 18px;
               &:hover {
                 color: $primary-color;
               }
@@ -112,8 +113,14 @@ body {
         }
         .mobile-nav {
           @include flex-center;
-          padding: 14px;
           justify-content: space-between;
+          ul {
+            li {
+              a {
+                font-size: 14px;
+              }
+            }
+          }
           .hwf-logo-img-mobile {
             width: 246px;
             height: 37px;
@@ -131,16 +138,18 @@ body {
   // Breadcrumb
   .breadcrumb-wrapper {
     border-bottom: 1px solid $border-color;
+    border-top: 1px solid $border-color;
     .breadcrumb {
       display: flex;
       font-size: 0.875rem;
       & > div {
-        height: 65.37px;
+        height: 66px;
         border-right: 1px solid $border-color;
         @include flex-center;
         width: 200px;
         padding-inline: 21.41px;
         cursor: pointer;
+        font-size: 16px;
       }
       .home-icon-container {
         border-left: 1px solid $border-color;
@@ -150,6 +159,13 @@ body {
         .home-icon {
           width: 24px;
           height: 24px;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .breadcrumb {
+        & > div {
+          font-size: 14px;
         }
       }
     }
@@ -472,6 +488,7 @@ body {
 
     .footer-content {
       @include container;
+      height: 96px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -481,7 +498,7 @@ body {
       @include flex-center;
       gap: 60px;
       margin-bottom: 24px;
-
+      height: 16px;
       a {
         text-decoration: none;
 
@@ -506,6 +523,8 @@ body {
       color: $text-color-light;
       font-size: 15px;
       font-weight: 300;
+      height: 56px;
+      line-height: 1.3;
       .copyright-info {
         gap: 22px;
         @include flex-center;
