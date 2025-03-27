@@ -2,20 +2,6 @@
 $primary-color: #0047ba;
 $secondary-color: #f3f4f6;
 $text-color: #333;
-$border-color: #e5e7eb;
-$border-color-gray: #A3A3A3;
-$white: #fff;
-$container-width: 1420px;
-$background-color: #F5F5F5;
-
-// Font declarations
-@font-face {
-  font-family: 'GyeonggiTitle';
-  src: url('./fonts/GyeonggiBatangOTF_Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 $text-color-light: #666;
 $text-color-bold: #222;
 $text-color-medium: #444;
@@ -28,7 +14,6 @@ $container-width: 1415px;
 @mixin container {
   max-width: $container-width;
   margin: 0 auto;
-  padding: 0 10px;
   padding: 0 15px;
 }
 
@@ -144,23 +129,6 @@ body {
   }
 
   // Breadcrumb
-  .breadcrumb {
-    padding: 1rem 0;
-    @include flex-center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-
-    .home-icon {
-      width: 16px;
-      height: 16px;
-      background-image: url("home-icon.png");
-      display: inline-block;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  }
-
   .breadcrumb-wrapper {
     border-bottom: 1px solid $border-color;
     .breadcrumb {
@@ -207,32 +175,6 @@ body {
   // Tab Menu
   .tab-menu {
     display: flex;
-    column-gap: 16px;
-    margin-bottom: 2rem;
-    @media screen and (max-width: 768px) {
-      overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    padding-bottom: 8px;
-    }
-
-    a {
-      padding: 19px 0;
-      min-width: 267px;
-      text-align: center;
-      text-decoration: none;
-      color: $text-color;
-      border: 1px solid $border-color-gray;
-      margin-right: -1px;
-      background-color: $secondary-color;
-      border-radius: 5px;
-      @media screen and (max-width: 768px) {
-        min-width: 185px;
-      }
-
-      &.active {
-        background-color: $primary-color;
     gap: 16px;
     width: 100%;
     margin-bottom: 30px;
@@ -253,7 +195,6 @@ body {
         color: $white;
         margin-bottom: -1px;
         font-weight: 500;
-        color: $white;
       }
     }
 
@@ -409,644 +350,53 @@ body {
     }
   }
 
-  // Tab nternal Styles
-  
-  .tab-internal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 35px;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
+  // Tab Content Styles
+  .tab-content {
+    .content-section {
+      background-color: $white;
+      padding: 2rem;
+      border-radius: 4px;
+      border: 1px solid $border-color;
 
-    .notice-box {
-      width: 100%;
-
-      .notice-title {
-        font-family: 'GyeonggiTitle';
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 1em;
-        letter-spacing: -2.5%;
-        color: #222222;
-        margin-bottom: 16px;
+      h2 {
+        color: $primary-color;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
       }
 
-      .notice-content {
-        background: #F5F5F5;
-        border: 1px solid $background-color;
-        border-radius: 10px;
-        padding: 20px 24px;
-        height: 120px;
-        display: flex;
-        align-items: center;
-        @media screen and (max-width: 768px) {
-          padding: 10px;
-          margin: 0 -10px;
-          border-radius: 0px;
-        }
-
-        p {
-          font-family: 'GyeonggiTitle';
-          font-weight: 300;
-          font-size: 14px;
-          line-height: 1.4em;
-          letter-spacing: -2.5%;
-          color: #666666;
-        }
-      }
-    }
-
-    .guide-section {
-      width: 100%;
-
-      .guide-title {
-        font-family: 'GyeonggiTitle';
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 1em;
-        letter-spacing: -2.5%;
-        color: #333333;
-        margin-bottom: 16px;
+      h3 {
+        font-size: 1.25rem;
+        margin: 1.5rem 0 1rem;
       }
 
-      .guide-text {
-        font-family: 'GyeonggiTitle';
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 1.3em;
-        letter-spacing: -2.5%;
-        color: #666666;
-      }
-    }
-
-    .report-method {
-      width: 100%;
-
-      .method-title {
-        font-family: 'GyeonggiTitle';
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 1em;
-        letter-spacing: -2.5%;
-        color: #333333;
-      }
-    }
-
-    .comparison-section {
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin-bottom: 40px;
-
-      .comparison-title {
-        font-family: 'GyeonggiTitle';
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 1em;
-        letter-spacing: -2.5%;
-        color: #333333;
-        margin-bottom: 16px;
-      }
-
-      .comparison-table {
-        min-width: 100%;
-        
-        table {
-          width: 100%;
-          border-collapse: collapse;
-          table-layout: fixed;
-          
-          @media screen and (max-width: 768px) {
-            white-space: normal;
-            min-width: 800px;
-          }
-
-          th, td {
-            padding: 16px;
-            border: 1px solid #DCDCDC;
-            vertical-align: top;
-            word-break: keep-all;
-            
-            &:first-child {
-              width: 140px;
-              background: #F5F5F5;
-              font-weight: 500;
-              white-space: nowrap;
-            }
-          }
-
-          th {
-            background: #EFEFEF;
-            font-weight: 500;
-            text-align: center;
-            border-top: 2px solid #333333;
-          }
-
-          ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            
-            li {
-              position: relative;
-              padding-left: 12px;
-              margin-bottom: 8px;
-              
-              &:before {
-                content: "•";
-                position: absolute;
-                left: 0;
-                top: 0;
-              }
-              
-              &:last-child {
-                margin-bottom: 0;
-              }
-            }
-          }
-
-          span {
-            font-weight: 500;
-          }
-        }
-      }
-    }
-
-    .download-buttons {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      @media screen and (max-width: 768px) {
-        flex-direction: column;
-        row-gap: 16px;
-      }
-
-      .btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 16px;
-        border-radius: 10px;
-        font-family: 'GyeonggiTitle';
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 1em;
-        letter-spacing: -2.5%;
-        color: #FFFFFF;
-        text-decoration: none;
-        height: 50px;
-        white-space: nowrap;
-        @media screen and (max-width: 768px) {
-          font-size: 14px;
-        }
-
-        &.btn-primary {
-          background: #0047BA;
-        }
-
-        &.btn-secondary {
-          background: #008CFF;
-        }
-      }
-    }
-  }
-}
-  }}
-
-// Contact Info
-.contact-info {
-  width: 100%;
-  border: 1px solid #B9B9B9;
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  column-gap: 90px;
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    row-gap: 16px;
-    align-items: flex-start;
-  }
-
-  p {
-    font-family: 'GyeonggiTitle';
-    font-size: 14px;
-    line-height: 1em;
-    letter-spacing: -2.5%;
-    color: #666666;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &.department {
-      font-weight: 300;
-    }
-
-    &.phone,
-    &.address {
-      font-weight: 500;
-    }
-  }
-}
-
-/* Emotion Tab Styles */
-.emotion-tab {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 35px;
-  width: 100%;
-  padding: 20px 0;
-
-  .emotion-section {
-    width: 100%;
-    max-width: 1400px;
-    ul {
-      margin-left: 30px;
-      @media screen and (max-width: 768px) {
-        margin-left: 20px;
-      }
-    }
-  }
-
-  .emotion-title {
-    font-family: 'GyeonggiTitle';
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1em;
-    letter-spacing: -2.5%;
-    color: #222222;
-    margin-bottom: 20px;
-  }
-
-  .emotion-subtitle {
-    font-family: 'GyeonggiTitle';
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1em;
-    letter-spacing: -2.5%;
-    color: #222222;
-    margin-bottom: 15px;
-  }
-
-  .emotion-content {
-    width: 100%;
-  }
-
-  .emotion-box {
-    background: #F5F5F5;
-    border: 1px solid $background-color;
-    border-radius: 10px;
-    padding: 40px 24px;
-    font-family: 'GyeonggiTitle';
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 1.4em;
-    color: #666666;
-    @media screen and (max-width: 768px) {
-      padding: 10px;
-      margin: 0 -10px;
-      border-radius: 0px;
-    }
-  }
-
-  .emotion-text {
-    font-family: 'GyeonggiTitle';
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.3em;
-    letter-spacing: -2.5%;
-    color: #666666;
-    max-width: 881px;
-    p {
-      padding-left: 10px;
-    }
-  }
-
-  .emotion-contact {
-    width: 100%;
-    max-width: 1400px;
-    margin-top: 20px;
-
-    .emotion-contact-box {
-      background: #FFFFFF;
-      border: 1px solid #B9B9B9;
-      border-radius: 10px;
-      padding: 20px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      column-gap: 90px;
-
-      .contact-text {
-        font-family: 'GyeonggiTitle';
-        font-size: 14px;
-        line-height: 1em;
-        letter-spacing: -2.5%;
-        color: #666666;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-}
-
-/* Emergency Tab Styles */
-.emergency-container {
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-
-  .emergency-header {
-    h2 {
-      font-family: 'GyeonggiTitle', sans-serif;
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 1em;
-      letter-spacing: -2.5%;
-      color: #222222;
-    }
-  }
-
-  .emergency-notice {
-    background-color: #F5F5F5;
-    border: 1px solid #EFEFEF;
-    border-radius: 10px;
-    padding: 30px 20px;
-    width: 100%;
-    @media screen and (max-width: 768px) {
-      padding: 10px;
-      padding-left: 20px;
-      margin: 0 -10px;
-      border-radius: 0px;
-      width: auto;
-    }
-
-    p {
-      font-family: 'GyeonggiTitle', sans-serif;
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 1.4em;
-      letter-spacing: -2.5%;
-      color: #666666;
-      margin-bottom: 10px;
-      margin-left: 30px;
-      position: relative;
-      @media screen and (max-width: 768px) {
-        margin-left: 0;
-      }
-      &::before {
-        content: '';
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: #666666;
-        border-radius: 50%;
-        top: 50%;
-        bottom: 50%;
-        transform: translateY(-50%);
-        left: -10px;
-        @media screen and (max-width: 768px) {
-          top: 10px;
-        }
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  .emergency-section {
-    h3 {
-      font-family: 'GyeonggiTitle', sans-serif;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 1em;
-      color: #333333;
-      margin-bottom: 20px;
-    }
-
-    .section-content {
-      .section-content-item {
-        p {
-          position: relative;
-          margin-left: 15px;
-          &::before {
-            content: '';
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #666666;
-            border-radius: 50%;
-            top: 50%;
-            bottom: 50%;
-            left: -10px;
-            transform: translateY(-50%);
-          }
-          &:last-child {
-            position: unset;
-            margin-left: 0;
-          }
-        }
-      }
       p {
-        font-family: 'GyeonggiTitle', sans-serif;
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 1.3em;
-        letter-spacing: -2.5%;
-        color: #666666;
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
 
-        &:last-child {
-          margin-bottom: 0;
+      ul,
+      ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+
+        li {
+          margin-bottom: 0.5rem;
         }
       }
-    }
-    .emergency-title {
-      margin-bottom: 0px;
-    }
-  }
 
-  .violation-table {
-    width: 100%;
-    margin-top: 20px;
-    
-    .table-scroll-container {
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch; // Cho iOS smooth scrolling
-      
-      // Style cho scrollbar
-      &::-webkit-scrollbar {
-        height: 8px;
-      }
-      
-      &::-webkit-scrollbar-track {
-        background: #f1f1f1;
+      .support-info,
+      .process-info,
+      .emergency-contacts {
+        background-color: $secondary-color;
+        padding: 1.5rem;
         border-radius: 4px;
+        margin-top: 1rem;
       }
-      
-      &::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-        
-        &:hover {
-          background: #555;
-        }
-      }
-    }
-    
-    table {
-      width: 100%;
-      min-width: 800px;
-      border-collapse: collapse;
-      background: #FFFFFF;
 
-      tr {
-        &.table-header {
-          border-top: 2px solid #333333;
-          
-          th {
-            background: #EFEFEF;
-            padding: 15px;
-            font-family: 'GyeonggiTitle', sans-serif;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 1em;
-            letter-spacing: -2.5%;
-            color: #333333;
-            text-align: center;
-            border: 1px solid #DCDCDC;
-
-            &.col-category {
-              width: 150px;
-            }
-
-            &.col-violation {
-              width: 400px;
-            }
-            &.col-punishment {
-              width: 250px;
-            }
-          }
-        }
-
-        td {
-          border: 1px solid #DCDCDC;
-          font-family: 'GyeonggiTitle', sans-serif;
-          font-size: 14px;
-          line-height: 1.4em;
-          letter-spacing: -2.5%;
-          color: #666666;
-          vertical-align: middle;
-          
-          .violation-table-td {
-            .violation-table-td-item {
-              padding: 16px 0px;
-              margin: 0 auto;
-              text-align: center;
-              @media screen and (max-width: 768px) {
-                padding: 16px 8px;
-              }
-            }
-            .border-top-item {
-              border-top: 1px solid #DCDCDC;
-            }
-            .violation-table-td-items {
-              border-top: 1px solid #DCDCDC;
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-
-              .violation-table-td-items-right {
-                p{
-                  padding: 16px 0px;
-                  margin: 0 auto;
-                  text-align: center;
-                }
-              }
-              .violation-table-td-items-left {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-right: 1px solid #DCDCDC;
-              }
-            }
-          }
-
-          &:first-child {
-            text-align: center;
-            font-weight: 500;
-            background: #EFEFEF;
-          }
-
-          ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-
-            li {
-              position: relative;
-              padding-left: 12px;
-              margin-bottom: 8px;
-              text-align: left;
-              font-weight: 300;
-
-              &:before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 8px;
-                width: 4px;
-                height: 4px;
-                background-color: #666666;
-                border-radius: 50%;
-              }
-
-              &:last-child {
-                margin-bottom: 0;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .emergency-footer {
-    margin-top: 20px;
-
-    .download-form {
-      margin-bottom: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .download-btn {
-        background: #0047BA;
-        border: none;
-        border-radius: 10px;
-        padding: 16px 30px;
-        font-family: 'GyeonggiTitle', sans-serif;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 1em;
-        color: #FFFFFF;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background: darken(#0047BA, 10%);
+      .emergency-contacts {
+        p {
+          margin-bottom: 0.5rem;
+          font-weight: 500;
         }
       }
     }
