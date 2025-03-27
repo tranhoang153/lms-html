@@ -91,26 +91,33 @@
 
       <script>
         document.addEventListener("DOMContentLoaded", function () {
+          const pageTitle = document.querySelector(".page-title");
           const tabLinks = document.querySelectorAll(".tab-link");
-          const contentContainer = document.getElementById(
-            "tab-content-container"
-          );
+          const contentContainer = document.getElementById("tab-content-container");
+
+          // Function to get tab title from link
+          function getTabTitle(link) {
+            return link.textContent || link.innerText;
+          }
 
           // Function to load content
-          async function loadTabContent(tabId) {
+          async function loadTabContent(tabId, tabTitle) {
             try {
               const response = await fetch(`tab-${tabId}.html`);
               const content = await response.text();
-              contentContainer.innerHTML = content;
+              pageTitle.textContent = tabTitle;
+              
+              contentContainer.innerHTML = '';
+              contentContainer.insertAdjacentHTML('beforeend', content);
             } catch (error) {
               console.error("Error loading tab content:", error);
-              contentContainer.innerHTML =
-                "<p>Error loading content. Please try again.</p>";
+              contentContainer.innerHTML = "<p>Error loading content. Please try again.</p>";
             }
           }
 
-          // Load initial content
-          loadTabContent("corruption");
+          // Load initial content with title
+          const initialTab = document.querySelector(".tab-link.active");
+          loadTabContent("corruption", getTabTitle(initialTab));
 
           // Add click handlers to tabs
           tabLinks.forEach((link) => {
@@ -123,9 +130,10 @@
               // Add active class to clicked tab
               this.classList.add("active");
 
-              // Load the corresponding content
+              // Load the corresponding content with title
               const tabId = this.getAttribute("data-tab");
-              loadTabContent(tabId);
+              const tabTitle = getTabTitle(this);
+              loadTabContent(tabId, tabTitle);
             });
           });
         });
