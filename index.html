@@ -91,7 +91,6 @@
 
       <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const pageTitle = document.querySelector(".page-title");
           const tabLinks = document.querySelectorAll(".tab-link");
           const contentContainer = document.getElementById("tab-content-container");
 
@@ -105,7 +104,6 @@
             try {
               const response = await fetch(`tab-${tabId}.html`);
               const content = await response.text();
-              pageTitle.textContent = tabTitle;
               
               contentContainer.innerHTML = '';
               contentContainer.insertAdjacentHTML('beforeend', content);
