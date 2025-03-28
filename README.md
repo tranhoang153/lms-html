@@ -8,11 +8,11 @@ This project implements a reporting center web interface for Hwaseong Special Ci
 project/
 ├── images/
 │   └── header_logo.png
-├── tab-corruption.html
-├── tab-unfair.html
-├── tab-emotion.html
-├── tab-internal.html
-├── tab-emergency.html
+├── tab-corruption.html (tab 부패신고)
+├── tab-unfair.html (tab 부조리신고 안내)
+├── tab-emotion.html (tab 갑질신고·지원센터 안내)
+├── tab-internal.html (tab 내부부패공익신고 안내)
+├── tab-emergency.html (tab 청탁금지법위반신고)
 ├── index.html
 ├── styles.scss
 ├── package.json
