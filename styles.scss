@@ -283,7 +283,6 @@ body {
         align-items: center;
         @media screen and (max-width: 768px) {
           padding: 10px;
-          margin: 0 -10px;
           border-radius: 0px;
         }
 
@@ -385,6 +384,7 @@ body {
     min-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
 
     table {
       width: 100%;
@@ -538,6 +538,9 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @media screen and (max-width: 768px) {
+        height: fit-content;
+      }
     }
 
     .footer-links {
@@ -545,6 +548,9 @@ body {
       gap: 60px;
       margin-bottom: 24px;
       height: 16px;
+      @media screen and (max-width: 768px) {
+        height: fit-content;
+      }
       a {
         text-decoration: none;
 
@@ -578,6 +584,9 @@ body {
         &-title {
           font-weight: 500;
         }
+      }
+      @media screen and (max-width: 768px) {
+        height: fit-content;
       }
     }
 
@@ -798,7 +807,8 @@ body {
         height: 50px;
         white-space: nowrap;
         @media screen and (max-width: 768px) {
-          font-size: 14px;
+          font-size: 13px;
+          padding: 16px 8px;
         }
 
         &.btn-primary {
@@ -1002,7 +1012,6 @@ body {
 
     @media screen and (max-width: 768px) {
       .form-group {
-        padding-inline: 16px;
         flex-direction: column;
         .form-group-title {
           padding-inline: 0px;
@@ -1035,8 +1044,6 @@ body {
     p {
       font-family: "GyeonggiTitle";
       font-size: 14px;
-      line-height: 1em;
-      letter-spacing: -2.5%;
       color: #666666;
 
       &:last-child {
@@ -1110,7 +1117,6 @@ body {
       color: #666666;
       @media screen and (max-width: 768px) {
         padding: 10px;
-        margin: 0 -10px;
         border-radius: 0px;
       }
     }
@@ -1287,6 +1293,7 @@ body {
         width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch; // Cho iOS smooth scrolling
+        scrollbar-width: thin;
 
         // Style cho scrollbar
         &::-webkit-scrollbar {
@@ -1464,7 +1471,7 @@ body {
     gap: 35px;
 
     @media screen and (max-width: 768px) {
-      padding: 20px 15px;
+      // padding: 20px 15px;
       gap: 25px;
     }
   }
@@ -1626,7 +1633,7 @@ body {
 
       @media screen and (max-width: 768px) {
         height: 45px;
-        font-size: 14px;
+        font-size: 12px;
         width: 100%;
       }
 
