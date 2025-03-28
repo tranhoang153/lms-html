@@ -8,16 +8,23 @@ This project implements a reporting center web interface for Hwaseong Special Ci
 project/
 ├── images/
 │   └── header_logo.png
-├── tab-corruption.html (tab 부패신고)
-├── tab-unfair.html (tab 부조리신고 안내)
-├── tab-emotion.html (tab 갑질신고·지원센터 안내)
-├── tab-internal.html (tab 내부부패공익신고 안내)
-├── tab-emergency.html (tab 청탁금지법위반신고)
+├── tab-corruption.html
+├── tab-unfair.html
+├── tab-emotion.html
+├── tab-internal.html
+├── tab-emergency.html
 ├── index.html
 ├── styles.scss
 ├── package.json
 └── README.md
 ```
+
+## Design Links
+- [tab-corruption.html](https://www.figma.com/design/TmGs8pzHHfb06T1WMTMJgw/%ED%99%94%EC%84%B1%EC%8B%9C%EB%B3%B5%EC%A7%80%EC%9E%AC%EB%8B%A8-%EB%88%84%EB%A6%AC%EC%A7%91-2025?node-id=1561-4189&t=7B0WfJKsSFVBFNI4-4)
+- [tab-unfair.html](https://www.figma.com/design/TmGs8pzHHfb06T1WMTMJgw/%ED%99%94%EC%84%B1%EC%8B%9C%EB%B3%B5%EC%A7%80%EC%9E%AC%EB%8B%A8-%EB%88%84%EB%A6%AC%EC%A7%91-2025?node-id=1561-4322&t=7B0WfJKsSFVBFNI4-4)
+- [tab-emotion.html](https://www.figma.com/design/TmGs8pzHHfb06T1WMTMJgw/%ED%99%94%EC%84%B1%EC%8B%9C%EB%B3%B5%EC%A7%80%EC%9E%AC%EB%8B%A8-%EB%88%84%EB%A6%AC%EC%A7%91-2025?node-id=1561-4509&t=7B0WfJKsSFVBFNI4-4)
+- [tab-internal.html](https://www.figma.com/design/TmGs8pzHHfb06T1WMTMJgw/%ED%99%94%EC%84%B1%EC%8B%9C%EB%B3%B5%EC%A7%80%EC%9E%AC%EB%8B%A8-%EB%88%84%EB%A6%AC%EC%A7%91-2025?node-id=1561-4595&t=7B0WfJKsSFVBFNI4-4)
+- [tab-emergency.html](https://www.figma.com/design/TmGs8pzHHfb06T1WMTMJgw/%ED%99%94%EC%84%B1%EC%8B%9C%EB%B3%B5%EC%A7%80%EC%9E%AC%EB%8B%A8-%EB%88%84%EB%A6%AC%EC%A7%91-2025?node-id=1561-4715&t=7B0WfJKsSFVBFNI4-4)
 
 ## Setup
 
