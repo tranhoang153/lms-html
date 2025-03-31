@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>한국사회복지재단</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="center-report-page">
@@ -44,7 +40,7 @@
                 class="hwf-logo-img"
               />
             </li>
-            <li><a href="#">H-아카데미</a></li>
+            <li><a href="#">H·아카데미</a></li>
             <li><a href="#">재용정보</a></li>
             <li><a href="#">복지정보</a></li>
             <li><a href="#">복지자료</a></li>
@@ -92,7 +88,9 @@
       <script>
         document.addEventListener("DOMContentLoaded", function () {
           const tabLinks = document.querySelectorAll(".tab-link");
-          const contentContainer = document.getElementById("tab-content-container");
+          const contentContainer = document.getElementById(
+            "tab-content-container"
+          );
 
           // Function to get tab title from link
           function getTabTitle(link) {
@@ -104,12 +102,13 @@
             try {
               const response = await fetch(`tab-${tabId}.html`);
               const content = await response.text();
-              
-              contentContainer.innerHTML = '';
-              contentContainer.insertAdjacentHTML('beforeend', content);
+
+              contentContainer.innerHTML = "";
+              contentContainer.insertAdjacentHTML("beforeend", content);
             } catch (error) {
               console.error("Error loading tab content:", error);
-              contentContainer.innerHTML = "<p>Error loading content. Please try again.</p>";
+              contentContainer.innerHTML =
+                "<p>Error loading content. Please try again.</p>";
             }
           }
 
